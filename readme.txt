@@ -1,0 +1,1 @@
+HTML шаблон и CSS файлы были предоставлены пользователем: https://github.com/DJWOMS/django_movie_template

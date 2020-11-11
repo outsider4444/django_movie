@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 from .models import Movie
 
@@ -6,16 +7,15 @@ from .models import Movie
 # Create your views here.
 
 
-class MovieView(View):
+class MovieView(ListView):
     """Список фильмов"""
+    model = Movie
+    # Выводить НЕчерновые фильмы
+    queryset = Movie.objects.filter(draft=False)
+    template_name = "movies/movie_list.html"
 
-    def get(self, request):
-        movies = Movie.objects.all()
-        return render(request, "movies/movies.html", {"movie_list": movies})
 
-
-class MovieDetailView(View):
+class MovieDetailView(DetailView):
     """Полное описание фильма"""
-    def get(self, request, pk):
-        movie = Movie.objects.get(id=pk)
-        return render(request, "movies/movie_detail.html", {"movie": movie})
+    model = Movie
+    slug_field = "url"

@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1111'
+SECRET_KEY = '*j91ue!5n2im!x+f50893r-din3+km&433p0cuhql-sy@5spny'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'movies',
     'ckeditor_uploader',
-    'ckeditor'
+    'ckeditor',
+
+    'snowpenguin.django.recaptcha3',
 ]
 
 MIDDLEWARE = [
@@ -172,7 +175,8 @@ CKEDITOR_CONFIGS = {
 
             ]},
         ],
-        'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
+        'toolbar': 'YourCustomToolbarConfig',
+        # put selected toolbar config here
         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
         # 'height': 291,
         # 'width': '100%',
@@ -201,3 +205,7 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+RECAPTCHA_PUBLIC_KEY = "6LebtyEaAAAAACZtPpRCGl7UWc6h94Pt8mNRH9Ty"
+RECAPTCHA_PRIVATE_KEY = "6LebtyEaAAAAANUjPTgst7dVQ532GZ0LZjqmrp4z"
+RECAPTCHA_DEFAULT_ACTION = "generic"
+RECAPTCHA_SCORE_THRESHOLD = 0.5

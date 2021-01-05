@@ -38,6 +38,7 @@ class MovieDetailView(GenreYear, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["star_form"] = RatingForm()
+        context["form"] = ReviewForm()
         return context
 
 
@@ -63,14 +64,14 @@ class ActorView(GenreYear, DetailView):
     slug_field = "name"
 
 
-class FilterMovieView(GenreYear, ListView):
+class FilterMoviesView(GenreYear, ListView):
     """Фильтр фильмов"""
-    paginate_by = 3
+    paginate_by = 5
 
     def get_queryset(self):
         queryset = Movie.objects.filter(
             Q(year__in=self.request.GET.getlist("year")) |
-            Q(genres__description__in=self.request.GET.getlist("genre"))
+            Q(genres__in=self.request.GET.getlist("genre"))
         ).distinct()
         return queryset
 
@@ -83,6 +84,7 @@ class FilterMovieView(GenreYear, ListView):
 
 class JsonFilterMoviesView(ListView):
     """Фильтр фильмов в json"""
+
     def get_queryset(self):
         queryset = Movie.objects.filter(
             Q(year__in=self.request.GET.getlist("year")) |

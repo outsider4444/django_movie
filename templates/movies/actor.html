@@ -25,14 +25,14 @@
                 <ul>
                     <li><span><b>Возраст: </b> {{ actor.age }} лет</span></li>
                     <li>
-                        <span><b>Режиссер: </b>
+                        <span><b>Снял: </b>
                             {% for movie in actor.film_director.all %}
                                 {{ movie.title }}
                             {% endfor %}</span></li>
                     <li>
-                        <span><b>Актеры: </b>
+                        <span><b>Снялся в: </b>
                             {% for movie in actor.film_actor.all %}
-                                {{ movie.title }}
+                                {{ movie.title }};
                             {% endfor %}
                     </span>
                     </li>

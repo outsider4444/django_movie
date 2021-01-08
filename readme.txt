@@ -1,1 +1,8 @@
-HTML шаблон и CSS файлы были предоставлены пользователем: https://github.com/DJWOMS/django_movie_template
+HTML шаблон и CSS файлы были предоставлены пользователем: https://github.com/DJWOMS/
+
+Библиотеки необходимые для запуска:
+
+pip install django
+pip install Pillow
+pip install django-recaptcha3
+pip install django-ckeditor

@@ -8,5 +8,7 @@ pip install django-recaptcha3
 pip install django-ckeditor
 pip install django-modeltranslation
 
+Для входа в админку использовать: "admin" "admin"
+
 
 * Для работы перевода на Windows необходимо установить файлы в папке SETUP

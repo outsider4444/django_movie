@@ -6,3 +6,4 @@ pip install django
 pip install Pillow
 pip install django-recaptcha3
 pip install django-ckeditor
+pip install django-modeltranslation

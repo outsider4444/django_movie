@@ -7,3 +7,6 @@ pip install Pillow
 pip install django-recaptcha3
 pip install django-ckeditor
 pip install django-modeltranslation
+
+
+* Для работы перевода на Windows необходимо установить файлы в папке SETUP
